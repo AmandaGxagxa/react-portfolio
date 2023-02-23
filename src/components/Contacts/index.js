@@ -21,7 +21,8 @@ function Contacts() {
         } else {
             setNameErr(false)
         }
-            console.warn(e.target.value)
+        setName(item)
+            // console.warn(e.target.value)
       }
    
       function emailHandler(e){
@@ -32,7 +33,8 @@ function Contacts() {
         } else {
             setEmailErr(false)
         }
-            console.warn(e.target.value)
+        setEmail(item)
+            // console.warn(e.target.value)
       }
    
       function msgHandler(e){
@@ -43,7 +45,8 @@ function Contacts() {
         } else {
             setMsgErr(false)
         }
-            console.warn(e.target.value)
+        setMessage(item)
+            // console.warn(e.target.value)
       }
    
    function formHandler(e){
@@ -90,21 +93,21 @@ function Contacts() {
                             <label htmlFor="names" className="form-label">Names</label>
                             <input type="text" onChange={userHandler} className="form-control requiredField" name="name" id="names"
                                 placeholder="Names" /><br />
-                            { nameErr?<span id="name-error"></span>:null}
+                            { nameErr?<span id="name-error">invalid name</span>:null}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
                             <input type="email" onChange={emailHandler} className="form-control requiredField" name="email" id="email"
                                 placeholder="name@example.com" />
                             <br />
-                            { emailErr? <span id="email-error"></span>:null}
+                            { emailErr? <span id="email-error">invalid email</span>:null}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="message" className="form-label">Message</label>
                             <textarea className="form-control requiredField" onChange={msgHandler} name="message" id="message" rows="3"></textarea>
                             <br />
                             
-                            {msgErr?<span id="message-error"></span>: null}
+                            {msgErr?<span id="message-error">invalid message</span>: null}
                         </div>
                         <input className="btn btn-pink" id="btn-pink" type="submit" value="Submit" />
                     </form>
