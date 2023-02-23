@@ -1,0 +1,150 @@
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding: .5em;
+  list-style: none;
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bolder;
+}
+nav li a:hover{
+  color: #b5838d;
+  font-weight: bold;
+  /* font-weight: bolder; */
+}
+nav li a:active{
+  color: #b5838d;
+  font-weight: bold;
+}
+
+
+
+.nav_toggle {
+  display: none;
+}
+
+.nav_toggle_label {
+  margin-top: -1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1em;
+}
+
+/* if checkbox is checked  */
+
+.nav_toggle:checked~nav {
+  display: block;
+  background-color: white;
+}
+
+
+.nav_toggle_label span,
+.nav_toggle_label span:before,
+.nav_toggle_label span:after {
+  display: block;
+  background-color: black;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+
+}
+
+.nav_toggle_label span:before,
+.nav_toggle_label span:after {
+  content: "";
+  position: absolute;
+}
+
+.nav_toggle_label span:before {
+  bottom: 8px;
+}
+
+.nav_toggle_label span:after {
+  top: 7px;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+      max-width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+     
+  }  
+
+ div.nav-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+ 
+      
+  nav ul {
+      display: flex;
+  }
+
+  nav ul li a {
+      color: bl;
+  }
+
+
+}
+
+.App {
+  text-align: center;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.AppHeader {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* CSS MODULES
+TO PACKAGE THE COMPONENTS
+
+*/
+
+/* .App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */ 
