@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-
-// import Form from 'react-bootstrap/Form';
+import React, { useState ,useRef} from "react";
 import styled from "styled-components";
+import emailjs from '@emailjs/browser';
 
 
 const Wrapper = styled.section`
@@ -20,6 +19,10 @@ function Contacts() {
   const [emailErr, setEmailErr] = useState(false);
   const [message, setMessage] = useState("");
   const [msgErr, setMsgErr] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [subjectErr, setSujectErr] = useState(false);
+
+  const form = useRef()
 
   function userHandler(e) {
     setName(e.target.value);
@@ -35,8 +38,12 @@ function Contacts() {
     setMessage(e.target.value);
     // console.warn(e.target.value)
   }
+  function subjectHandler(e) {
+    setSubject(e.target.value);
+    // console.warn(e.target.value)
+  }
 
-  function formHandler(e) {
+  function sendEmail(e) {
     e.preventDefault();
 
     if (name.length < 4) {
@@ -56,6 +63,23 @@ function Contacts() {
     } else {
       setMsgErr(false);
     }
+
+    if (subject.length < 4) {
+        setSujectErr(true);
+      } else {
+        setSujectErr(false);
+      }
+
+      
+        e.preventDefault();
+    
+        emailjs.sendForm(service_ewxeyhm, 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      
   }
 
  
@@ -86,9 +110,10 @@ function Contacts() {
         <div className="col-md-6 form">
           <form
             name="contact"
-            onSubmit={formHandler}
-            action="https://formspree.io/f/xnqrdrge"
+            onSubmit={sendEmail}
+            ref={form}
             method="post"
+            className="form-control"
           >
             <div className="mb-3">
               <label htmlFor="names" className="form-label">
@@ -121,6 +146,21 @@ function Contacts() {
               />
               <br />
               {emailErr ? <span id="email-error">invalid email</span> : null}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="subject" className="form-label">
+                Subect
+              </label>
+              <input
+                type="subject"
+                value={subject}
+                onChange={subjectHandler}
+                className="form-control requiredField"
+                name="subject"
+                id="subject"
+              />
+              <br />
+              {subjectErr ? <span id="invalid subject">Invalid subject</span> : null}
             </div>
             <div className="mb-3">
               <label htmlFor="message" className="form-label">

@@ -4,6 +4,15 @@ import mypic from './mishy.png'
 import './About.css'
 import styled from "styled-components";
 
+const Wrapper = styled.section`
+min-height: 100vh;
+background-color: #ffafcc;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 50px;
+`
+
 function About() {
   const [contact, setContact] = useState({
     firstName: "Amanda",
@@ -21,14 +30,7 @@ function About() {
 
   let url = "https://www.babesgotbytes.org/";
 
-  const Wrapper = styled.section`
-    min-height: 100vh;
-    background-color: #ffafcc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
-`
+
 
 
   return (
