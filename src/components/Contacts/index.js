@@ -1,15 +1,14 @@
-import React, { useState ,useRef} from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import emailjs from '@emailjs/browser';
-
+import emailjs from "@emailjs/browser";
 
 const Wrapper = styled.section`
-min-height: 100vh;
-background-color: #ffafcc;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: left;
+  min-height: 100vh;
+  background-color: #ffafcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 `;
 
 function Contacts() {
@@ -22,7 +21,7 @@ function Contacts() {
   const [subject, setSubject] = useState("");
   const [subjectErr, setSujectErr] = useState(false);
 
-  const form = useRef()
+  const form = useRef();
 
   function userHandler(e) {
     setName(e.target.value);
@@ -65,24 +64,30 @@ function Contacts() {
     }
 
     if (subject.length < 4) {
-        setSujectErr(true);
-      } else {
-        setSujectErr(false);
-      }
+      setSujectErr(true);
+    } else {
+      setSujectErr(false);
+    }
 
-      
-        e.preventDefault();
-    
-        emailjs.sendForm(service_ewxeyhm, 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      
+    // e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ewxeyhm",
+        "template_7yjkak8",
+        form.current,
+        "DeemCVrPOlwKeTS5r"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+      e.target.reset(e)
   }
-
- 
 
   return (
     <Wrapper classNameName="container">
@@ -160,7 +165,9 @@ function Contacts() {
                 id="subject"
               />
               <br />
-              {subjectErr ? <span id="invalid subject">Invalid subject</span> : null}
+              {subjectErr ? (
+                <span id="invalid subject">Invalid subject</span>
+              ) : null}
             </div>
             <div className="mb-3">
               <label htmlFor="message" className="form-label">
