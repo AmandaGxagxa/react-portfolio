@@ -90,7 +90,7 @@ function Contacts() {
   }
 
   return (
-    <Wrapper classNameName="container">
+    <Wrapper className="container">
       <div className="row">
         <div className="col-md-6">
           <h2>CONTACT ME</h2>
