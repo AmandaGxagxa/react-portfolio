@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import About from "./components/About";
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "./index.css";
+
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Skills from "./components/Skills";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import About from "./components/About";
+import Contacts from "./components/Contacts";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Contacts from "./components/Contacts";
+import Skills from "./components/Skills";
 
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

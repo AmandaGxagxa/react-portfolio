@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Logo from "../img/AmandaLogo.svg";
 import "./Navbar.css";
 import "./responsive.css";
-import Logo from "../img/AmandaLogo.svg";
-import styled from "styled-components";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 function Navbar() {
   const Wrapper = styled.section`
