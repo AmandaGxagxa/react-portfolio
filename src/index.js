@@ -8,10 +8,10 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Projects from "./components/Projects";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,9 +28,9 @@ root.render(
           <Route path="/" element={<About />} />
           <Route path="skills" element={<Skills />} />
 
-          <Route path="/experience" component={Experience} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/contact" component={Contacts} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contacts />} />
         </Routes>
       </Router>
     </section>

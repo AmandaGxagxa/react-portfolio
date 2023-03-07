@@ -33,20 +33,14 @@ function Navbar() {
                   </li>
 
                   <li>
-                    <a className=" page-scroll" href="#experience">
-                      Experience
-                    </a>
+                    <Link to={`/experience`}>Experience</Link>
                   </li>
                   <li>
-                    <a className=" page-scroll" href="#projects">
-                      Projects
-                    </a>
+                    <Link to={`/projects`}>Projects</Link>
                   </li>
 
                   <li>
-                    <a className=" page-scroll" href="#contacts">
-                      Contact
-                    </a>
+                    <Link to={`/contacts`}>Contacts</Link>
                   </li>
                 </ul>
               </nav>
