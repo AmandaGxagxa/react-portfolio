@@ -35,13 +35,4 @@ root.render(
       </Router>
     </section>
   </React.StrictMode>
-  // <React.StrictMode>
-  //     <Navbar />
-  //     <About />
-  //     <Skills />
-  //     <Experience />
-  //     <Projects />
-  //     <Contacts />
-  //     <Footer />
-  // </React.StrictMode>
 );

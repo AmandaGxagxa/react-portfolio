@@ -1,11 +1,11 @@
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// import Tooltip from "react-bootstrap/Tooltip";
 
 // import todolist from "./todolist.png";
+import styled from "styled-components";
+import dicegame from "./dicegame.png";
 import searchbar from "./searchbar.png";
 import unitconverter from "./unitconverter.png";
-import dicegame from "./dicegame.png";
-import styled from "styled-components";
 
 function Projects() {
   const Wrapper = styled.section`
@@ -18,11 +18,11 @@ function Projects() {
 
   return (
     <Wrapper className="container">
-      
+
       <div className="row">
-      <div className="col-md-12">
-                    <h2>PROJECTS</h2>
-                </div>
+        <div className="col-md-12">
+          <h2>PROJECTS</h2>
+        </div>
         <div className="col-md-4" href="">
           <a href="https://amandagxagxa.github.io/DiceGame/">
             <div className="project">
@@ -37,7 +37,7 @@ function Projects() {
         </div>
         <div className="col-md-4">
           <div className="project">
-            <a href="">
+            <a href="https://amandagxagxa.github.io/SearchBar/">
               <img src={searchbar} className="image" alt="" />
             </a>
             <div className="overlay">
@@ -49,7 +49,7 @@ function Projects() {
           </div>
         </div>
         <div className="col-md-4">
-          <a href="">
+          <a href="https://amandagxagxa.github.io/UnitConverter/">
             <div className="project">
               <img src={unitconverter} className="image" alt="" />
               <div className="overlay">
@@ -61,7 +61,7 @@ function Projects() {
           </a>
         </div>
       </div>
-    </Wrapper>
+    </Wrapper >
   );
 }
 
