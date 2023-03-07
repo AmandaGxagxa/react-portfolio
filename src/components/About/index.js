@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import mypic from "./mishy.png";
-import "./About.css";
 import styled from "styled-components";
+import "./About.css";
+import mypic from "./mishy.png";
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -19,10 +19,10 @@ const Text = styled.div`
 `;
 
 function About() {
-  const [contact, setContact] = useState({
-    firstName: "Amanda",
-    lastName: "Gxagxa",
-  });
+  // const [contact, setContact] = useState({
+  //   firstName: "Amanda",
+  //   lastName: "Gxagxa",
+  // });
   const [showProfile, setShowProfile] = useState(false);
 
   const toggleProfile = () => {
@@ -41,7 +41,7 @@ function About() {
         <div className="col-md-6 me">
           <Text>
             <h1 className="name">
-              Hi, I am {contact.firstName} {contact.lastName}
+              Hi, I am Amanda Gxagxa
             </h1>
             <br />
             <p>
@@ -61,7 +61,7 @@ function About() {
                 <p>
                   {" "}
                   I am co-founder of an NPO,{" "}
-                  <a href={url} target="_blank">
+                  <a href={url} target="_blank" rel="noreferrer">
                     Babes Got Bytes
                   </a>
                   , where we teach young girls how to code. Our aim is to raise
