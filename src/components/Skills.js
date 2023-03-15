@@ -34,7 +34,7 @@ align-items: center;
 
 
     return (
-        <Wrapper className="container">
+        <Wrapper className="container"id="skills">
             <div className="row">
                 <div className="col-md-12">
                     <h2>SKILLS</h2>

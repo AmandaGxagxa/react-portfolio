@@ -3,8 +3,13 @@ import styled from "styled-components";
 import Logo from "../img/AmandaLogo.svg";
 import "./Navbar.css";
 import "./responsive.css";
+// import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import "./Navbar.css"
 
-function Navbar() {
+
+function NavBar() {
   const Wrapper = styled.section`
     background-color: transparent;
     // display: flex;
@@ -12,14 +17,34 @@ function Navbar() {
     // justify-content: flex-end
   `;
 
+
+
   return (
+
+
+    
     <div id="header" className="fixed-top transparent">
       <Wrapper className="container ">
-        <div className="row ">
-          <div className="col-md-4">
-            <img src={Logo} alt="Logo" />
-          </div>
-          <div className="col-md-8 ">
+
+      
+          <Navbar bg="transparent" expand="lg">
+      
+        
+          <img src={Logo} alt="Logo" />
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto d-flex justify-content-end">
+            <Nav.Link href="#home">About</Nav.Link>
+            <Nav.Link href="#skills">Skills</Nav.Link>
+            <Nav.Link href="#experience">Experience</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="#link">Contacts</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      
+    </Navbar>
+          {/* <div className="col-md-8 ">
             <div className="nav-container">
               <input type="checkbox" id="nav_toggle" className="nav_toggle" />
               <nav>
@@ -49,10 +74,10 @@ function Navbar() {
               </label>
             </div>
           </div>
-        </div>
-      </Wrapper>
+  </div>*/}
+      </Wrapper> 
     </div>
   );
 }
 
-export default Navbar;
+export default NavBar;

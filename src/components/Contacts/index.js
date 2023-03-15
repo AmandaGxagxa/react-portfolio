@@ -1,6 +1,9 @@
-import React, { useState, useRef } from "react";
-import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useRef, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import styled from "styled-components";
+import ContactForm from "./ContactForm";
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -10,6 +13,9 @@ const Wrapper = styled.section`
   align-items: center;
   text-align: left;
 `;
+const FormWrap = styled.div`
+max-width:100%
+`
 
 function Contacts() {
   const [name, setName] = useState("");
@@ -19,7 +25,7 @@ function Contacts() {
   const [message, setMessage] = useState("");
   const [msgErr, setMsgErr] = useState(false);
   const [subject, setSubject] = useState("");
-  const [subjectErr, setSujectErr] = useState(false);
+  const [subjectErr, setSubjectErr] = useState(false);
 
   const form = useRef();
 
@@ -30,16 +36,13 @@ function Contacts() {
 
   function emailHandler(e) {
     setEmail(e.target.value);
-    // console.warn(e.target.value)
   }
 
   function msgHandler(e) {
     setMessage(e.target.value);
-    // console.warn(e.target.value)
   }
   function subjectHandler(e) {
     setSubject(e.target.value);
-    // console.warn(e.target.value)
   }
 
   function sendEmail(e) {
@@ -64,12 +67,10 @@ function Contacts() {
     }
 
     if (subject.length < 4) {
-      setSujectErr(true);
+      setSubjectErr(true);
     } else {
-      setSujectErr(false);
+      setSubjectErr(false);
     }
-
-    // e.preventDefault();
 
     emailjs
       .sendForm(
@@ -86,115 +87,125 @@ function Contacts() {
           console.log(error.text);
         }
       );
-      e.target.reset(e)
+    e.target.reset(e);
   }
 
   return (
-    <Wrapper className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <h2>CONTACT ME</h2>
-          <span className="line"></span>
-          <br />
-          <span>Want to connect with me or collaborate?</span>
-          <br />
-          <br />
-          <br />
-          <div className="col-xs-12">
-            <a href="https://www.linkedin.com/in/amanda-gxagxa-5826a0128/">
-              <img src="img/linkedin.png" alt=" " />
-            </a>
-            <a href="https://github.com/AmandaGxagxa">
-              <img src="img/github.png" alt="" />
-            </a>
-            <a href="https://twitter.com/amanda_gxagxa">
-              <img src="img/twitter.png" alt="" />
-            </a>
-          </div>
-        </div>
-        <div className="col-md-6 form">
-          <form
-            name="contact"
-            onSubmit={sendEmail}
-            ref={form}
-            method="post"
-            className="form-control"
-          >
-            <div className="mb-3">
-              <label htmlFor="names" className="form-label">
-                Names
-              </label>
-              <input
-                type="text"
-                onChange={userHandler}
-                value={name}
-                className="form-control requiredField"
-                name="name"
-                id="names"
-                placeholder="Names"
-              />
-              <br />
-              {nameErr ? <span id="name-error">invalid name</span> : null}
-            </div>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email address
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={emailHandler}
-                className="form-control requiredField"
-                name="email"
-                id="email"
-                placeholder="name@example.com"
-              />
-              <br />
-              {emailErr ? <span id="email-error">invalid email</span> : null}
-            </div>
-            <div className="mb-3">
-              <label htmlFor="subject" className="form-label">
-                Subect
-              </label>
-              <input
-                type="subject"
-                value={subject}
-                onChange={subjectHandler}
-                className="form-control requiredField"
-                name="subject"
-                id="subject"
-              />
-              <br />
-              {subjectErr ? (
-                <span id="invalid subject">Invalid subject</span>
-              ) : null}
-            </div>
-            <div className="mb-3">
-              <label htmlFor="message" className="form-label">
-                Message
-              </label>
-              <textarea
-                className="form-control requiredField"
-                value={message}
-                onChange={msgHandler}
-                name="message"
-                id="message"
-                rows="3"
-              ></textarea>
-              <br />
+    <>
+      <ContactForm />
 
-              {msgErr ? <span id="message-error">invalid message</span> : null}
+      <Wrapper className="container">
+        <Row className="row">
+          <Col className="col-md-6">
+            <h2>CONTACT ME</h2>
+            <span className="line"></span>
+            <br />
+            <span>Want to connect with me or collaborate?</span>
+            <br />
+            <br />
+            <br />
+            <div className="col-xs-12">
+              <a href="https://www.linkedin.com/in/amanda-gxagxa-5826a0128/">
+                <img src="img/linkedin.png" alt=" " />
+              </a>
+              <a href="https://github.com/AmandaGxagxa">
+                <img src="img/github.png" alt="" />
+              </a>
+              <a href="https://twitter.com/amanda_gxagxa">
+                <img src="img/twitter.png" alt="" />
+              </a>
             </div>
-            <input
-              className="btn btn-pink"
-              id="btn-pink"
-              type="submit"
-              value="Submit"
-            />
-          </form>
-        </div>
-      </div>
-    </Wrapper>
+          </Col>
+          <Col className="col-md-6 form">
+            <FormWrap>
+              <form
+                name="contact"
+                onSubmit={sendEmail}
+                ref={form}
+                method="post"
+                className="form-control"
+              >
+                <div className="mb-3">
+                  <label htmlFor="names" className="form-label">
+                    Names
+                  </label>
+                  <input
+                    type="text"
+                    onChange={userHandler}
+                    value={name}
+                    className="form-control requiredField"
+                    name="name"
+                    id="names"
+                    placeholder="Names"
+                  />
+                  <br />
+                  {nameErr ? <span id="name-error">invalid name</span> : null}
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={emailHandler}
+                    className="form-control requiredField"
+                    name="email"
+                    id="email"
+                    placeholder="name@example.com"
+                  />
+                  <br />
+                  {emailErr ? (
+                    <span id="email-error">invalid email</span>
+                  ) : null}
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="subject" className="form-label">
+                    Subect
+                  </label>
+                  <input
+                    type="subject"
+                    value={subject}
+                    onChange={subjectHandler}
+                    className="form-control requiredField"
+                    name="subject"
+                    id="subject"
+                  />
+                  <br />
+                  {subjectErr ? (
+                    <span id="invalid subject">Invalid subject</span>
+                  ) : null}
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="message" className="form-label">
+                    Message
+                  </label>
+                  <textarea
+                    className="form-control requiredField"
+                    value={message}
+                    onChange={msgHandler}
+                    name="message"
+                    id="message"
+                    rows="3"
+                  ></textarea>
+                  <br />
+
+                  {msgErr ? (
+                    <span id="message-error">invalid message</span>
+                  ) : null}
+                </div>
+                <input
+                  className="btn btn-pink"
+                  id="btn-pink"
+                  type="submit"
+                  value="Submit"
+                />
+              </form>
+            </FormWrap>
+          </Col>
+        </Row>
+      </Wrapper>
+    </>
   );
 }
 
