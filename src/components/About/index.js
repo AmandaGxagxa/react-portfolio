@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-// import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import styled from "styled-components";
 import "./About.css";
 import mypic from "./mishy.png";
+// import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -36,9 +36,10 @@ function About() {
   let url = "https://www.babesgotbytes.org/";
 
   return (
-    <Wrapper className="container">
+    <Wrapper className="container" id="home">
       <div className="row">
         <div className="col-md-6 me">
+         
           <Text>
             <h1 className="name">
               Hi, I am Amanda Gxagxa

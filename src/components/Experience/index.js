@@ -28,7 +28,7 @@ const ExpImg = styled.img.attrs((props) => ({
 
     return (
 
-        <Wrapper className="container">
+        <Wrapper className="container" id="experience">
             <div className="row">
                 <div className="col-md-12">
                     <h2>EXPERIENCE</h2>

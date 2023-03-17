@@ -1,11 +1,21 @@
+/* 
+.navbar-dark .navbar-toggler, .navbar-light .navbar-toggler {
+  border: 0;
+  background-color: transparent;
+}
+.navbar {
+  box-shadow: none;
+  padding-top: 0.5625rem;
+} */
 
-nav ul {
+
+/* nav ul {
   margin: 0;
   padding: 0;
   text-align: center;
-}
+} */
 
-nav ul li {
+/* nav ul li {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   padding: .5em;
@@ -16,16 +26,16 @@ nav ul li {
 nav ul li a {
   color: black;
   font-weight: bolder;
-}
-nav li a:hover{
+} */
+/* nav li a:hover{
   color: #b5838d;
   font-weight: bold;
   /* font-weight: bolder; */
-}
+/* } */
 nav li a:active{
   color: #b5838d;
   font-weight: bold;
-}
+} */
 
 
 

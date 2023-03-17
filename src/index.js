@@ -1,37 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import "./index.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, } from "react-router-dom";
 import Projects from "./components/Projects";
+import NavTwo from "./components/NavTwo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+     {/* <NavTwo /> */}
     <section className="App">
-      {/* <Link to="/about"><About us></Link>
-    <Link to="/skills">Skills</Link>
-    <Link to="/experience">Experience</Link>
-    <Link to="/projects">Projects</Link>
-    <Link to="/contact">Contact</Link> */}
+    <NavBar />
+   
+    <About />
+    <Skills/>
+    <Experience />
+    <Projects />
+    <Contacts />
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="skills" element={<Skills />} />
-
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contacts />} />
-        </Routes>
+       
+        {/* <Routes>
+         
+          <Route path="/contacts" element={} />
+        </Routes> */}
       </Router>
     </section>
   </React.StrictMode>

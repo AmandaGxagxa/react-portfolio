@@ -17,7 +17,7 @@ function Projects() {
   `;
 
   return (
-    <Wrapper className="container">
+    <Wrapper className="container" id="projects">
 
       <div className="row">
         <div className="col-md-12">
