@@ -130,7 +130,7 @@ function Contacts() {
                   onChange={userHandler}
                   value={name}
                   name="name"
-                  id="names"
+                  // id="names"
                 />
                 {nameErr ? <span id="name-error">invalid name</span> : null}
               </Form.Group>
@@ -146,7 +146,7 @@ function Contacts() {
                   onChange={emailHandler}
                   className="form-control requiredField"
                   name="email"
-                  id="email"
+                  // id="email"
                   placeholder="name@example.com"
                 />
                 {emailErr ? <span id="email-error">invalid email</span> : null}
@@ -163,7 +163,7 @@ function Contacts() {
                   onChange={subjectHandler}
                   className="form-control requiredField"
                   name="subject"
-                  id="subject"
+                  // id="subject"
                 />
                 {subjectErr ? (
                   <span id="invalid subject">Invalid subject</span>
@@ -182,7 +182,7 @@ function Contacts() {
                   value={message}
                   onChange={msgHandler}
                   name="message"
-                  id="message"
+                  // id="message"
                 />
                 {msgErr ? (
                   <span id="message-error">invalid message</span>
