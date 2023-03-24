@@ -5,26 +5,12 @@ import "./Navbar.css";
 import "./responsive.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./Navbar.css";
 
-function NavBar() {
+
+function Header() {
   const Wrapper = styled.section`
     background-color: transparent;
-  
-
   `;
-
-  // const [colorChange, setColorchange] = useState(false);
-  // const changeNavbarColor = () =>{
-  //    if(window.scrollY >= 80){
-  //      setColorchange(true);
-  //    }
-  //    else{
-  //      setColorchange(false);
-  //    }
-  // };
-
-  // window.addEventListener('scroll', changeNavbarColor);
 
   return (
     <div id="header" className="fixed-top transparent">
@@ -48,4 +34,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;
