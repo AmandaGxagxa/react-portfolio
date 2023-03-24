@@ -1,7 +1,6 @@
 
 import styled from "styled-components";
 import Logo from "../img/AmandaLogo.svg";
-import { useState } from "react";
 import "./Navbar.css";
 import "./responsive.css";
 import Nav from "react-bootstrap/Nav";
@@ -15,17 +14,17 @@ function NavBar() {
 
   `;
 
-  const [colorChange, setColorchange] = useState(false);
-  const changeNavbarColor = () =>{
-     if(window.scrollY >= 80){
-       setColorchange(true);
-     }
-     else{
-       setColorchange(false);
-     }
-  };
+  // const [colorChange, setColorchange] = useState(false);
+  // const changeNavbarColor = () =>{
+  //    if(window.scrollY >= 80){
+  //      setColorchange(true);
+  //    }
+  //    else{
+  //      setColorchange(false);
+  //    }
+  // };
 
-  window.addEventListener('scroll', changeNavbarColor);
+  // window.addEventListener('scroll', changeNavbarColor);
 
   return (
     <div id="header" className="fixed-top transparent">
