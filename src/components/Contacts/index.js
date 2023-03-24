@@ -1,6 +1,5 @@
 import emailjs from "@emailjs/browser";
 import Form from "react-bootstrap/Form";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
@@ -9,14 +8,6 @@ const Wrapper = styled.section`
   min-height: 100vh;
   background-color: #ffafcc;
 `;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: left;
-// `;
-// const FormWrap = styled.div`
-// max-width:100%
-// `
 
 function Contacts() {
   const [name, setName] = useState("");
@@ -95,108 +86,110 @@ function Contacts() {
     <>
       <Wrapper id="contacts">
         <Container>
-        <Row >
-          <Col className="col-md-6">
-            <h2>CONTACT ME</h2>
-            <span className="line"></span>
-            <br />
-            <span>Want to connect with me or collaborate?</span>
-            <br />
-            <br />
-            <br />
-            <div className="col-xs-12">
-              <a href="https://www.linkedin.com/in/amanda-gxagxa-5826a0128/">
-                <img src="img/linkedin.png" alt=" " />
-              </a>
-              <a href="https://github.com/AmandaGxagxa">
-                <img src="img/github.png" alt="" />
-              </a>
-              <a href="https://twitter.com/amanda_gxagxa">
-                <img src="img/twitter.png" alt="" />
-              </a>
-            </div>
-          </Col>
-          <Col className="col-md-6 ">
-           
-            <Form name="contact" onSubmit={sendEmail} ref={form} method="post">
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
+          <Row>
+            <Col className="col-md-6">
+              <h2>CONTACT ME</h2>
+              <span className="line"></span>
+              <br />
+              <span>Want to connect with me or collaborate?</span>
+              <br />
+              <br />
+              <br />
+              <div className="col-xs-12">
+                <a href="https://www.linkedin.com/in/amanda-gxagxa-5826a0128/">
+                  <img src="img/linkedin.png" alt=" " />
+                </a>
+                <a href="https://github.com/AmandaGxagxa">
+                  <img src="img/github.png" alt="" />
+                </a>
+                <a href="https://twitter.com/amanda_gxagxa">
+                  <img src="img/twitter.png" alt="" />
+                </a>
+              </div>
+            </Col>
+            <Col className="col-md-6 ">
+              <Form
+                name="contact"
+                onSubmit={sendEmail}
+                ref={form}
+                method="post"
               >
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Jess Pro"
-                  onChange={userHandler}
-                  value={name}
-                  name="name"
-                  // id="names"
-                />
-                {nameErr ? <span id="name-error">invalid name</span> : null}
-              </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Jess Pro"
+                    onChange={userHandler}
+                    value={name}
+                    name="name"
+                  />
+                  {nameErr ? <span id="name-error">invalid name</span> : null}
+                </Form.Group>
 
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={emailHandler}
-                  className="form-control requiredField"
-                  name="email"
-                  // id="email"
-                  placeholder="name@example.com"
-                />
-                {emailErr ? <span id="email-error">invalid email</span> : null}
-              </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={emailHandler}
+                    className="form-control requiredField"
+                    name="email"
+                    placeholder="name@example.com"
+                  />
+                  {emailErr ? (
+                    <span id="email-error">invalid email</span>
+                  ) : null}
+                </Form.Group>
 
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Subect</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={subject}
-                  onChange={subjectHandler}
-                  className="form-control requiredField"
-                  name="subject"
-                  // id="subject"
-                />
-                {subjectErr ? (
-                  <span id="invalid subject">Invalid subject</span>
-                ) : null}
-              </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>Subect</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={subject}
+                    onChange={subjectHandler}
+                    className="form-control requiredField"
+                    name="subject"
+                  />
+                  {subjectErr ? (
+                    <span id="invalid subject">Invalid subject</span>
+                  ) : null}
+                </Form.Group>
 
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  className="form-control requiredField"
-                  value={message}
-                  onChange={msgHandler}
-                  name="message"
-                  // id="message"
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Label>Example textarea</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    className="form-control requiredField"
+                    value={message}
+                    onChange={msgHandler}
+                    name="message"
+                  />
+                  {msgErr ? (
+                    <span id="message-error">invalid message</span>
+                  ) : null}
+                </Form.Group>
+                <input
+                  className="btn btn-pink"
+                  id="btn-pink"
+                  type="submit"
+                  value="Submit"
                 />
-                {msgErr ? (
-                  <span id="message-error">invalid message</span>
-                ) : null}
-              </Form.Group>
-              <input
-                className="btn btn-pink"
-                id="btn-pink"
-                type="submit"
-                value="Submit"
-              />
-            </Form>
-          </Col>
-        </Row>
+              </Form>
+            </Col>
+          </Row>
         </Container>
       </Wrapper>
     </>

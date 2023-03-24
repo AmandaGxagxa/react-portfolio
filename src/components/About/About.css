@@ -10,7 +10,7 @@
   }
   .me{
     margin: auto;
-    /* text-align: left; */
+   
   }
   .ab {
     order: -1;
@@ -43,24 +43,6 @@
   background: rgba(255, 255, 255, 0);
   transition: background .3s linear
   }
-  /* section#about {
-    min-height: 100vh;
-    background-color: #ffafcc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px
-    
-  }
-
-  section#experience {
-    min-height: 100vh;
-    background-color: #ffafcc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-   */
  
   
 
@@ -75,7 +57,7 @@
     width: 110px;
   }
   
-  /* hover overlay */
+
   
   .project {
     display: block;

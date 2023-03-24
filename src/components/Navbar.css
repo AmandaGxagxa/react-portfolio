@@ -35,7 +35,7 @@ nav ul li a {
 nav li a:active{
   color: #b5838d;
   font-weight: bold;
-} */
+} 
 
 
 
@@ -141,14 +141,6 @@ nav li a:active{
   color: white;
 }
 
-/* CSS MODULES
-TO PACKAGE THE COMPONENTS
-
-*/
-
-/* .App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import "./About.css";
 import mypic from "./mishy.png";
-// import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -19,10 +19,7 @@ const Text = styled.div`
 `;
 
 function About() {
-  // const [contact, setContact] = useState({
-  //   firstName: "Amanda",
-  //   lastName: "Gxagxa",
-  // });
+ 
   const [showProfile, setShowProfile] = useState(false);
 
   const toggleProfile = () => {
