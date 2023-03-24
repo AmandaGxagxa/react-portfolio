@@ -12,7 +12,7 @@ import Skills from "./components/Skills";
 
 import { BrowserRouter as Router, } from "react-router-dom";
 import Projects from "./components/Projects";
-import NavTwo from "./components/NavTwo";
+// import NavTwo from "./components/NavTwo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

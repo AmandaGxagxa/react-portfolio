@@ -1,10 +1,9 @@
-// import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import Logo from "../img/AmandaLogo.svg";
 import { useState } from "react";
 import "./Navbar.css";
 import "./responsive.css";
-// import Container from 'react-bootstrap/Container';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Navbar.css";
@@ -12,10 +11,7 @@ import "./Navbar.css";
 function NavBar() {
   const Wrapper = styled.section`
     background-color: transparent;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: flex-end
-
+  
 
   `;
 
@@ -37,9 +33,9 @@ function NavBar() {
         <Navbar bg="transparent" variant="light" expand="lg">
           <img src={Logo} alt="Logo" />
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto d-flex justify-content-end">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="justify-content-end" />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav className="me-auto justify-content-end">
               <Nav.Link href="#home">About</Nav.Link>
               <Nav.Link href="#skills">Skills</Nav.Link>
               <Nav.Link href="#experience">Experience</Nav.Link>
