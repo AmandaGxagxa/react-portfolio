@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, } from "react-router-dom";
+
 
 import Header from "./components/Header";
 import About from "./components/About";
@@ -25,13 +25,7 @@ root.render(
     <Experience />
     <Projects />
     <Contacts />
-      <Router>
-       
-        {/* <Routes>
-         
-          <Route path="/contacts" element={} />
-        </Routes> */}
-      </Router>
+   
     </section>
   </React.StrictMode>
 );

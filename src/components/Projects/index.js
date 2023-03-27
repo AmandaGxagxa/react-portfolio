@@ -1,7 +1,3 @@
-// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-// import Tooltip from "react-bootstrap/Tooltip";
-
-// import todolist from "./todolist.png";
 import styled from "styled-components";
 import dicegame from "./dicegame.png";
 import searchbar from "./searchbar.png";
