@@ -1,5 +1,3 @@
-// import './About.css'
-
 import styled from 'styled-components'
 import css from '../img/css.png'
 import git from '../img/git.png'

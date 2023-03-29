@@ -13,8 +13,8 @@ function Header() {
   `;
 
   return (
-    <div id="header" className="fixed-top transparent">
-      <Wrapper className="container ">
+    
+      <Wrapper id="header" className="fixed-top transparent container">
         <Navbar bg="transparent" variant="light" expand="lg">
           <img src={Logo} alt="Logo" />
 
@@ -30,7 +30,7 @@ function Header() {
           </Navbar.Collapse>
         </Navbar>
       </Wrapper>
-    </div>
+  
   );
 }
 
